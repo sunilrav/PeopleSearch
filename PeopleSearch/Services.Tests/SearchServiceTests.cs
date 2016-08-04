@@ -1,8 +1,9 @@
-﻿using PeopleSearch.Models.Domain;
+﻿using Moq;
+using PeopleSearch.Data;
+using PeopleSearch.Models.Domain;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+using System.Linq.Expressions;
 using Xunit;
 
 namespace PeopleSearch.Services.Tests
@@ -13,10 +14,16 @@ namespace PeopleSearch.Services.Tests
         public void Search_IfNameFound_ReturnListOfContacts()
         {
             //Arrange
-            var searchService = new SearchService();
+            var contactRepository = new Mock<IGenericRepository<Contact>>();
+            contactRepository.Setup(
+                e => e.Get(It.IsAny<Expression<Func<Contact, bool>>>()))
+                                        .Returns(new List<Contact>
+                                        { new Contact { FirstName = "Mickey", LastName = "Mouse" } });
+
+            var searchService = new SearchService(contactRepository.Object);
 
             //Act
-            List<Contact> contacts = searchService.SearchByName();
+            List<Contact> contacts = searchService.SearchByName("Mick");
 
             //Assert
             Assert.True(contacts.Count > 0);
