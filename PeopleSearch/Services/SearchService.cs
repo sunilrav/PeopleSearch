@@ -5,7 +5,7 @@ using PeopleSearch.Data;
 
 namespace PeopleSearch.Services
 {
-    public class SearchService
+    public class SearchService : ISearchService
     {
         IGenericRepository<Contact> _contactRepository;
         public SearchService(IGenericRepository<Contact> contactRepository)
