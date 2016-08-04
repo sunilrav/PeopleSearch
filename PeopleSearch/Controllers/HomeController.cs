@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using PeopleSearch.Models.ViewModels;
 using System.Web.Mvc;
 
 namespace PeopleSearch.Controllers
@@ -9,6 +6,13 @@ namespace PeopleSearch.Controllers
     public class HomeController : Controller
     {
         public ActionResult Index()
+        {
+            ViewBag.Title = "Home Page";
+
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Index(SearchViewModel searchViewModel)
         {
             ViewBag.Title = "Home Page";
 
