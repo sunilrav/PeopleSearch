@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
-namespace PeopleSearch.Models.Domain
+﻿namespace PeopleSearch.Models.Domain
 {
     public class Contact
     {

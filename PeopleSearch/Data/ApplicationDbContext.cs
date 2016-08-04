@@ -6,5 +6,10 @@ namespace PeopleSearch.Data
     public class ApplicationDbContext : DbContext
     {
         public DbSet<Contact> Contacts { get; set; }
+
+        public ApplicationDbContext()
+        {
+            Database.SetInitializer(new PeopleSearchDbInitializer());
+        }
     }
 }
