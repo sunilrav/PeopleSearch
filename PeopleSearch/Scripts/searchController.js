@@ -15,6 +15,7 @@
 
         $scope.searchName = function (input) {
             $scope.loading = true;
+            $scope.results = null;
             $http.get("/api/search?q=" + input)
                  .then(onSearchComplete, onError);
         };
