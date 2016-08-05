@@ -30,13 +30,13 @@
             </div>
         </div>
 
-        <div class="row">
+        <div class="row" ng-show="error">
             {{ error }}
         </div>
 
-        <div class="row top-buffer" ng-repeat="result in results">
+        <div class="row top-buffer" ng-show="results" ng-repeat="result in results">
             <div class="col-md-3">
-                <img height="200" width="200" src="~/Images/{{result.Picture}}"/>
+                <img height="200" width="200" ng-src="~/Images/{{result.Picture}}"/>
             </div>
             <div class="col-md-4">
                 <h2>{{ result.FirstName }} {{ result.LastName }}</h2>
