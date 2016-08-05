@@ -13,7 +13,7 @@
         };
 
         $scope.searchName = function (input) {
-            $http.get("http://localhost:51212/api/search?q=" + input)
+            $http.get("/api/search?q=" + input)
                  .then(onSearchComplete, onError);
         };
     });

@@ -16,7 +16,8 @@ namespace PeopleSearch.Controllers
         [Route("api/search")]
         public List<Contact> Get(string q)
         {
-            return _searchService.SearchByName(q);
+            var list = _searchService.SearchByName(q);
+            return list;
         }
     }
 }

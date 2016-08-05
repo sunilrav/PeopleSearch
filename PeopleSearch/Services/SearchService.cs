@@ -15,7 +15,7 @@ namespace PeopleSearch.Services
 
         public List<Contact> SearchByName(string inputName)
         {
-            var contacts = _contactRepository.Get(x => x.FirstName.Contains(inputName) || x.LastName.Contains(inputName));
+            var contacts = _contactRepository.Get(x => x.FirstName.Contains(inputName) || x.LastName.Contains(inputName), "Address");
 
             return contacts.ToList();
         }

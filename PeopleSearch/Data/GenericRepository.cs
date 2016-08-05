@@ -16,11 +16,15 @@ namespace PeopleSearch.Data
             _context = context;
             _dbSet = context.Set<T>();
         }
-
        
         public IEnumerable<T> Get(Expression<Func<T, bool>> predicate)
         {
             return _dbSet.Where(predicate);
+        }
+
+        public IEnumerable<T> Get(Expression<Func<T, bool>> predicate, string include)
+        {
+            return _dbSet.Where(predicate).Include(include);
         }
     }
 }

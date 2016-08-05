@@ -15,15 +15,15 @@
         
         <div class="row">
             <div class="col-md-8">
-                <form name="searchForm" class="form-horizontal">
+                <form name="searchForm" class="form-horizontal" ng-submit="searchName(inputName)">
                     <div class="form-group">
                         <div class="col-md-10">
-                            <input type="search" placeholder="Name to find" class="form-control" ng-model="inputName" />
+                            <input type="search" required placeholder="Name to find" class="form-control" ng-model="inputName" />
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="col-md-10">
-                            <input type="submit" value="Search" class="btn btn-default" ng-click="searchName(inputName)" />
+                            <input type="submit" value="Search" class="btn btn-default" />
                         </div>
                     </div>        
                 </form>
@@ -33,9 +33,16 @@
         <div class="row">
             {{ error }}
         </div>
-        <div class="row" ng-repeat="result in results">
-            <div class="col-md-8">
-                {{ result.FirstName }} {{ result.LastName }}
+
+        <div class="row top-buffer" ng-repeat="result in results">
+            <div class="col-md-3">
+                <img height="200" width="200" src="~/Images/{{result.Picture}}"/>
+            </div>
+            <div class="col-md-4">
+                <h2>{{ result.FirstName }} {{ result.LastName }}</h2>
+                <p><b>Age:</b> {{result.Age}}</p>
+                <p><b>Interests:</b> {{result.Interests}}</p>
+                <p><b>Address:</b> {{result.Address.Address1}}, {{result.Address.City}}, {{result.Address.State}}, {{result.Address.Zip}}</p>
             </div>
         </div>
 
