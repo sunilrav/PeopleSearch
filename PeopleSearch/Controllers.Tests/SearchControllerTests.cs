@@ -9,7 +9,7 @@ namespace PeopleSearch.Controllers.Tests
     public class SearchControllerTests
     {
         [Fact]
-        public void Search_IfNameFound_ReturnListOfContacts()
+        public async void Search_IfNameFound_ReturnListOfContacts()
         {
             //Arrange
             var searchService = new Mock<ISearchService>();
@@ -20,7 +20,7 @@ namespace PeopleSearch.Controllers.Tests
             var searchController = new SearchController(searchService.Object);
            
             //Act
-            List<Contact> contacts = searchController.Get("Mouse");
+            List<Contact> contacts = await searchController.Get("Mouse");
 
             //Assert
             Assert.True(contacts.Count > 0);

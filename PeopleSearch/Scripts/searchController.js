@@ -1,11 +1,12 @@
 ﻿(function () {
     
     var app = angular.module("searchApp", []);
-
+   
     app.controller('searchController', function ($scope, $http) {
 
         var onSearchComplete = function (response) {
             $scope.results = response.data;
+            $scope.loading = false;
         };
 
         var onError = function (response) {
@@ -13,6 +14,7 @@
         };
 
         $scope.searchName = function (input) {
+            $scope.loading = true;
             $http.get("/api/search?q=" + input)
                  .then(onSearchComplete, onError);
         };
