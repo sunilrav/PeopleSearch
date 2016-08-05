@@ -267,6 +267,8 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Images\Donald.jpg" />
+    <Content Include="Images\Mickey.jpg" />
     <Content Include="Images\NoPhoto.png" />
     <Content Include="Images\spinner.gif" />
     <Content Include="Scripts\ai.0.22.19-build00125.js" />
