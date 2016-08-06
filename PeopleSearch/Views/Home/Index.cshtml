@@ -31,7 +31,11 @@
             </div>
         </div>
 
-        <div class="row" ng-show="error">
+        <div class="row top-buffer" ng-show="noresults">
+            {{ noresults }}
+        </div>
+
+        <div class="row top-buffer" ng-show="error">
             {{ error }}
         </div>
 
