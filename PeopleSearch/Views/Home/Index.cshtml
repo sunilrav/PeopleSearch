@@ -14,11 +14,12 @@
         <h2>@ViewBag.Title</h2>
         
         <div class="row">
-            <div class="col-md-8">
+            <div class="col-md-6">
                 <form name="searchForm" class="form-horizontal" ng-submit="searchName(inputName)">
                     <div class="form-group">
                         <div class="col-md-10">
                             <input type="search" required placeholder="Name to find" class="form-control" ng-model="inputName" />
+                            <p><i>Hints for testing: mi, peter</i></p>
                         </div>
                     </div>
                     <div class="form-group">
@@ -28,6 +29,16 @@
                         </div>
                     </div>        
                 </form>
+            </div>
+            <div class="col-md-6">
+                <p><b>Note to tester</b></p>
+                <p>Asp.Net version: MVC 5</p>
+                <p>DB: EntityFramework Code First</p>
+                <p>Unit testing: XUnit</p>
+                <p>Mocks: Moq</p>
+                <p>Dependency Injection: Ninject</p>
+                <p>Client Side: AngularJS</p>
+                <p>Hints for testing: mi, peter</p>
             </div>
         </div>
 
