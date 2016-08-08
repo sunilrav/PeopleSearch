@@ -2,26 +2,28 @@
     
     var app = angular.module("searchApp", []);
    
-    app.controller('searchController', function ($scope, $http) {
+    app.controller('searchController', function ($http, $scope) {
 
-        var onSearchComplete = function (response) {
-            $scope.results = response.data;
-            if ($scope.results.length == 0)
+        var vm = this;
+
+        onSearchComplete = function (response) {
+            vm.results = response.data;
+            if (vm.results.length == 0)
             {
-                $scope.noresults = "Could not find any contact with that name.";
+                vm.noresults = "Could not find any contact with that name.";
             }
-            $scope.loading = false;
+            vm.loading = false;
         };
 
-        var onError = function (response) {
-            $scope.error = "System not avaliable at this time.(Exception)";
+        onError = function (response) {
+            vm.error = "System not avaliable at this time.(Exception)";
         };
 
-        $scope.searchName = function (input) {
-            $scope.loading = true;
-            $scope.results = null;
-            $scope.noresults = null;
-            $scope.error = null;
+        this.searchName = function (input) {
+            vm.loading = true;
+            vm.results = null;
+            vm.noresults = null;
+            vm.error = null;
             $http.get("/api/search?q=" + input)
                  .then(onSearchComplete, onError);
         };
