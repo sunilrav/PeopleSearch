@@ -24,7 +24,7 @@
                     </div>
                     <div class="form-group">
                         <div class="col-md-10">
-                            <input type="submit" value="Search" class="btn btn-default" />
+                            <input type="submit" value="Search" ng-disabled="ctrl.loading" class="btn btn-default" />
                             <img id="spinner" ng-src="~/Images/spinner.gif" ng-show="ctrl.loading" height="50" width="50">
                         </div>
                     </div>        
