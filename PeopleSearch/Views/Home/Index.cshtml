@@ -15,17 +15,17 @@
         
         <div class="row">
             <div class="col-md-6">
-                <form name="searchForm" class="form-horizontal" ng-submit="ctrl.searchName(ctrl.inputName)">
+                <form name="searchForm" ng-submit="ctrl.searchName(ctrl.inputName)">
                     <div class="form-group">
-                        <div class="col-md-10">
+                        <div class="col-md-6">
                             <input type="search" required placeholder="Name to find" class="form-control" ng-model="ctrl.inputName" />
                             <p><i>Hints for testing: mi, peter</i></p>
                         </div>
                     </div>
                     <div class="form-group">
-                        <div class="col-md-10">
+                        <div class="col-md-6">
                             <input type="submit" value="Search" ng-disabled="ctrl.loading" class="btn btn-default" />
-                            <img id="spinner" ng-src="~/Images/spinner.gif" ng-show="ctrl.loading" height="50" width="50">
+                            <img id="spinner" ng-src="~/Images/spinner.gif" ng-show="ctrl.loading" height="30" width="30">
                         </div>
                     </div>        
                 </form>
